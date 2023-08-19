@@ -1,0 +1,1 @@
+# Lambda_secrets-manager_pwd_rotation_AuroraPostgreSQL
