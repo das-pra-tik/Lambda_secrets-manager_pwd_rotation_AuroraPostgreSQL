@@ -23,12 +23,6 @@ resource "aws_key_pair" "ssh_key_pair" {
   provisioner "local-exec" {
     when    = create
     command = "chmod 400 ${local_file.pem-file.filename}"
-
-    command = <<-EOT
-      echo '${tls_private_key.ssh_private_key.private_key_pem}' > '${var.key-pair-name}'.pem
-      chmod 400 '${var.key-pair-name}'.pem
-    EOT
-
   }
 
   # When this resources is destroyed, delete the associated key from the file system
